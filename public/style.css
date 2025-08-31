@@ -1,0 +1,23 @@
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0b0f14;color:#e8eef5}
+header{padding:12px 16px;background:#121a24;border-bottom:1px solid #1f2b3a;position:sticky;top:0;z-index:10}
+h1{margin:0;font-size:18px}
+.controls{display:flex;gap:12px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.controls input,.controls select,textarea{background:#0e151f;color:#e8eef5;border:1px solid #223146;border-radius:6px;padding:6px 8px}
+button{background:#1f6feb;border:0;border-radius:6px;padding:8px 12px;color:#fff;cursor:pointer}
+button:hover{filter:brightness(1.05)}
+.toggle{display:flex;align-items:center;gap:6px}
+main{display:grid;grid-template-columns:1fr 360px;gap:12px;padding:12px}
+.left{position:relative}
+canvas{width:100%;height:auto;border:1px solid #1f2b3a;border-radius:8px;background:#0a0d12;display:block}
+#fog{position:absolute;left:0;top:0;pointer-events:none}
+aside{background:#0e151f;border:1px solid #1f2b3a;border-radius:8px;padding:12px;height:fit-content;max-height:calc(100vh - 150px);overflow:auto}
+aside h2{margin-top:0}
+#markers{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.marker{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.marker .left{display:flex;align-items:center;gap:8px}
+.marker .dot{width:10px;height:10px;border-radius:50%}
+.marker button{background:#2b394b}
+.role{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.panel label{display:block;margin:6px 0}
+footer{padding:16px;text-align:center;opacity:.7}
+@media(max-width:1100px){main{grid-template-columns:1fr}}

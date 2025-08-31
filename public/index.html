@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JDR – FastAPI Multi</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header>
+    <h1>JDR – Carte procédurale (FastAPI)</h1>
+    <div class="controls">
+      <label>Seed <input id="seed" type="text" value="Bourgogne"></label>
+      <label>Taille
+        <select id="size"><option>129</option><option selected>257</option><option>513</option></select>
+      </label>
+      <label>Palette
+        <select id="palette"><option value="earth" selected>Terre</option><option value="galaxy">Galaxie</option></select>
+      </label>
+      <button id="regen">Générer</button>
+      <button id="randomSeed">Seed aléatoire</button>
+      <button id="exportPNG">Export PNG</button>
+      <label class="toggle"><input type="checkbox" id="hexToggle"> Grille hex</label>
+      <label class="toggle"><input type="checkbox" id="fogToggle"> Brouillard MJ</label>
+    </div>
+  </header>
+
+  <main>
+    <section class="left">
+      <canvas id="map" width="1024" height="1024"></canvas>
+      <canvas id="fog" width="1024" height="1024"></canvas>
+    </section>
+    <aside>
+      <div class="role">
+        <label>Rôle :
+          <select id="role">
+            <option value="joueur" selected>Joueur</option>
+            <option value="mj">MJ</option>
+          </select>
+        </label>
+        <div class="persist"><strong>Persistance :</strong> <span id="persistence">...</span></div>
+        <div class="multi"><strong>Multijoueur :</strong> <span id="multi">connexion...</span></div>
+      </div>
+
+      <div class="panel">
+        <h2>Marqueurs</h2>
+        <form id="markerForm">
+          <label>Type
+            <select id="mType">
+              <option value="lieu">Lieu</option>
+              <option value="pnj">PNJ</option>
+              <option value="quete">Quête</option>
+            </select>
+          </label>
+          <label>Nom <input id="mLabel" type="text" placeholder="Auberge du Sanglier"></label>
+          <label>Notes <textarea id="mNotes" rows="3" placeholder="Horaires, rumeur, etc."></textarea></label>
+          <button type="submit">Poser sur la carte (clic)</button>
+        </form>
+        <ul id="markers"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer><span>FastAPI + WebSocket • Postgres persistant (Railway)</span></footer>
+
+  <script src="/public/main.js"></script>
+</body>
+</html>
